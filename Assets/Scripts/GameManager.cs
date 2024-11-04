@@ -200,10 +200,17 @@ public class GameManager : MonoBehaviour
         //about setting info
         musicSound._soundVolume = sound;
         //about coins
-        coins = PlayerPrefs.GetInt("coins");
+        coins = Coins;
         completed = PlayerPrefs.GetInt("completed");
-        completed_coins_text.text = "Completed : " + completed.ToString() + "  |  " + "Coins : " + coins.ToString();
+        completed_coins_text.text = "Completed : " + completed.ToString() + "  |  " + "Coins : " + Coins.ToString();
     }
+
+    public static int Coins
+    {
+        get { return PlayerPrefs.GetInt("Coins", 10); }
+        set { PlayerPrefs.SetInt("Coins", value); }
+    }
+
     public void LocalPlayerSelector(Dice dice)
     {
         _noOfPlayers = 0; _noOfHumans = 0; _noOfComputers = 0;
@@ -480,8 +487,9 @@ public class GameManager : MonoBehaviour
     }
     public void AddCoins()
     {        
-        coins += 10;
-        PlayerPrefs.SetInt("coins", coins);
+        //coins += 10;
+        Coins += 10;
+        //PlayerPrefs.SetInt("coins", coins);
     }
     public void ProfileChange(int myValue)
     {

@@ -273,8 +273,9 @@ public class Player : MonoBehaviour
                             dice.gameManager.coins += 5;
                             dice.gameManager.completed += 1;
                             PlayerPrefs.SetInt("completed", dice.gameManager.completed);
-                            PlayerPrefs.SetInt("coins", dice.gameManager.coins);
-                            
+                            //PlayerPrefs.SetInt("coins", dice.gameManager.coins);
+                            GameManager.Coins += dice.gameManager.coins;
+
                         }
                         else if (dice.gameManager.totalPlayers == 2 && winnerCount == 1)
                         {
@@ -287,7 +288,8 @@ public class Player : MonoBehaviour
                             dice.gameManager.coins += 5;
                             dice.gameManager.completed += 1;
                             PlayerPrefs.SetInt("completed", dice.gameManager.completed);
-                            PlayerPrefs.SetInt("coins", dice.gameManager.coins);
+                            //PlayerPrefs.SetInt("coins", dice.gameManager.coins);
+                            GameManager.Coins += dice.gameManager.coins;
                             //activation game over panel
                             dice.gameManager.canvasGameObjects[8].SetActive(false);
                             dice.gameManager.canvasGameObjects[9].SetActive(true);
@@ -311,7 +313,8 @@ public class Player : MonoBehaviour
                             dice.gameManager.coins += 5;
                             dice.gameManager.completed += 1;
                             PlayerPrefs.SetInt("completed", dice.gameManager.completed);
-                            PlayerPrefs.SetInt("coins", dice.gameManager.coins);
+                            //PlayerPrefs.SetInt("coins", dice.gameManager.coins);
+                            GameManager.Coins += dice.gameManager.coins;
                             //activation game over panel
                             dice.gameManager.canvasGameObjects[8].SetActive(false);
                             dice.gameManager.canvasGameObjects[9].SetActive(true);
